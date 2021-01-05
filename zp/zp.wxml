@@ -1,0 +1,23 @@
+<view class="container">
+	<view class="main" style="margin-top: 10rpx">
+		<view class="canvas-container">
+			<view  animation="{{animationData}}" class="canvas-content" >
+				<view class="canvas-line">
+					<view class="canvas-litem" wx:for="{{awardsList}}" wx:key="unique" style="-webkit-transform: rotate({{item.lineTurn}});transform: rotate({{item.lineTurn}})"></view>
+				</view>
+        
+				<view class="canvas-list">
+					<view class="canvas-item" wx:for="{{awardsList}}" wx:key="unique">
+						<view class="canvas-item-text" style="-webkit-transform: rotate({{item.turn}});transform: rotate({{item.turn}})">
+							<view>{{item.award}}</view>
+							<image wx:if="{{item.src}}" style="padding-top: 0;width:60px; height: 50px;" src="{{item.src}}" alt="" />
+						</view>
+					</view>
+				</view>
+			</view>
+      
+			<view bindtap="playReward" class="canvas-btn {{btnDisabled}}">抽奖</view>		
+		</view>
+	</view>
+</view>
+
